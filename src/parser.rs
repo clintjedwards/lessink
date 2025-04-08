@@ -14,18 +14,23 @@ pub fn parse(input: &str) -> Result<Pairs<'_, Rule>, pest::error::Error<Rule>> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use once_cell::sync::Lazy;
-    use std::sync::Arc;
+    use once_cell::unsync::Lazy;
+    use std::cell::RefCell;
 
-    static AST: Lazy<Arc<Pairs<'_, Rule>>> = Lazy::new(|| {
-        let unparsed_file = std::fs::read_to_string("example.lessink").unwrap();
+    thread_local! {
+        static AST: Lazy<RefCell<Pairs<'static, Rule>>> = Lazy::new(|| {
+            let unparsed_file = std::fs::read_to_string("test.lessink").unwrap();
+            let unparsed_file = Box::leak(Box::new(unparsed_file));
 
-        Mutex::new(parse(&unparsed_file).unwrap())
-    });
+            RefCell::new(parse(unparsed_file).unwrap())
+        });
+    }
 
     #[test]
-    fn test_heading_1() {}
-
-    #[test]
-    fn test_heading_2() {}
+    fn test_h1() {
+        AST.with(|ast| {
+            let next = ast.borrow_mut().next().unwrap();
+            assert_eq!(next.as_rule(), Rule::h1);
+        });
+    }
 }
