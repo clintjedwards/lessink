@@ -1,0 +1,363 @@
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h1,
+    span: Span {
+        str: "# Heading 1",
+        start: 0,
+        end: 11,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 1",
+                start: 2,
+                end: 11,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 1",
+                        start: 2,
+                        end: 11,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h2,
+    span: Span {
+        str: "## Heading 2",
+        start: 13,
+        end: 25,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 2",
+                start: 16,
+                end: 25,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 2",
+                        start: 16,
+                        end: 25,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h3,
+    span: Span {
+        str: "### Heading 3",
+        start: 27,
+        end: 40,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 3",
+                start: 31,
+                end: 40,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 3",
+                        start: 31,
+                        end: 40,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h4,
+    span: Span {
+        str: "#### Heading 4",
+        start: 42,
+        end: 56,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 4",
+                start: 47,
+                end: 56,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 4",
+                        start: 47,
+                        end: 56,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h5,
+    span: Span {
+        str: "##### Heading 5",
+        start: 58,
+        end: 73,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 5",
+                start: 64,
+                end: 73,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 5",
+                        start: 64,
+                        end: 73,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: h6,
+    span: Span {
+        str: "###### Heading 6",
+        start: 75,
+        end: 91,
+    },
+    inner: [
+        Pair {
+            rule: rich_txt,
+            span: Span {
+                str: "Heading 6",
+                start: 82,
+                end: 91,
+            },
+            inner: [
+                Pair {
+                    rule: text,
+                    span: Span {
+                        str: "Heading 6",
+                        start: 82,
+                        end: 91,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: paragraph,
+    span: Span {
+        str: "This is a paragraph that introduces the document.",
+        start: 93,
+        end: 142,
+    },
+    inner: [
+        Pair {
+            rule: text,
+            span: Span {
+                str: "This is a paragraph that introduces the document.",
+                start: 93,
+                end: 142,
+            },
+            inner: [],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: list,
+    span: Span {
+        str: "- First list item\n",
+        start: 144,
+        end: 162,
+    },
+    inner: [
+        Pair {
+            rule: list_level,
+            span: Span {
+                str: "",
+                start: 144,
+                end: 144,
+            },
+            inner: [],
+        },
+        Pair {
+            rule: list_element,
+            span: Span {
+                str: "- First list item",
+                start: 144,
+                end: 161,
+            },
+            inner: [
+                Pair {
+                    rule: rich_txt,
+                    span: Span {
+                        str: "First list item",
+                        start: 146,
+                        end: 161,
+                    },
+                    inner: [
+                        Pair {
+                            rule: text,
+                            span: Span {
+                                str: "First list item",
+                                start: 146,
+                                end: 161,
+                            },
+                            inner: [],
+                        },
+                    ],
+                },
+            ],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: paragraph,
+    span: Span {
+        str: "1) First numbered item",
+        start: 163,
+        end: 185,
+    },
+    inner: [
+        Pair {
+            rule: text,
+            span: Span {
+                str: "1) First numbered item",
+                start: 163,
+                end: 185,
+            },
+            inner: [],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: codeblock,
+    span: Span {
+        str: "```bash\necho \"Hello, lessink!\"\n```",
+        start: 187,
+        end: 221,
+    },
+    inner: [
+        Pair {
+            rule: slug,
+            span: Span {
+                str: "bash",
+                start: 190,
+                end: 194,
+            },
+            inner: [],
+        },
+        Pair {
+            rule: codeblock_code,
+            span: Span {
+                str: "echo \"Hello, lessink!\"",
+                start: 195,
+                end: 217,
+            },
+            inner: [],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: admonition,
+    span: Span {
+        str: "::: warning\nThis is a warning block that spans multiple lines.\n\nIt includes some advice, some exposition, and even an example:\n\n```bash\necho \"Danger, Will Robinson!\"\n```\n:::\n",
+        start: 223,
+        end: 397,
+    },
+    inner: [
+        Pair {
+            rule: admonition_start,
+            span: Span {
+                str: "::: warning\n",
+                start: 223,
+                end: 235,
+            },
+            inner: [
+                Pair {
+                    rule: admonition_type,
+                    span: Span {
+                        str: "warning",
+                        start: 227,
+                        end: 234,
+                    },
+                    inner: [],
+                },
+            ],
+        },
+        Pair {
+            rule: admonition_content,
+            span: Span {
+                str: "This is a warning block that spans multiple lines.\n\nIt includes some advice, some exposition, and even an example:\n\n```bash\necho \"Danger, Will Robinson!\"\n```\n",
+                start: 235,
+                end: 393,
+            },
+            inner: [],
+        },
+        Pair {
+            rule: admonition_end,
+            span: Span {
+                str: ":::\n",
+                start: 393,
+                end: 397,
+            },
+            inner: [],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: paragraph,
+    span: Span {
+        str: "This is just a simple line ",
+        start: 398,
+        end: 425,
+    },
+    inner: [
+        Pair {
+            rule: text,
+            span: Span {
+                str: "This is just a simple line ",
+                start: 398,
+                end: 425,
+            },
+            inner: [],
+        },
+    ],
+}
+[src/renderer.rs:18:13] &node = Pair {
+    rule: EOI,
+    span: Span {
+        str: "",
+        start: 426,
+        end: 426,
+    },
+    inner: [],
+}

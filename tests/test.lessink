@@ -8,6 +8,8 @@
 
 ##### Heading 5
 
+###### Heading 6
+
 This is a paragraph that introduces the document.
 
 - First list item
@@ -22,10 +24,9 @@ echo "Hello, lessink!"
 This is a warning block that spans multiple lines.
 
 It includes some advice, some exposition, and even an example:
-
-```bash
-echo "Danger, Will Robinson!"
-```
 :::
 
-This is just a simple line 
+This is just a simple line with a footnote[^1]
+
+
+[^1]: This is a footnote for the line above.

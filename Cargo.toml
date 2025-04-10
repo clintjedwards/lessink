@@ -7,3 +7,4 @@ edition = "2024"
 pest = "2.8.0"
 pest_derive = "2.8.0"
 once_cell = "1.21.3"
+clap = { version = "4.5.35", features = ["derive", "wrap_help"]}

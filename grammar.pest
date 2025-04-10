@@ -30,6 +30,20 @@ list_level = { " "* }
 list_element       =  { "- " ~ rich_txt ~ (vertical_space? ~ list_element_under)* }
 list               =  { list_level ~ list_element ~ (NEWLINE+ ~ list_level ~ list_element)* ~ (NEWLINE | EOI) }
 
+numbered_list =  { numbered_list_item ~ (NEWLINE+ ~ numbered_list_item)* ~ (NEWLINE | EOI) }
+numbered_list_number = { ASCII_DIGIT+ ~ ") "}
+numbered_list_item = { numbered_list_number ~ rich_txt }
+
+// Inline reference: [^1]
+footnote_ref = { "[^" ~ ASCII_DIGIT+ ~ "]" }
+
+// Definition: [^1]: This is the footnote
+footnote_def = {
+    footnote_label ~ ": " ~ rich_txt
+}
+
+footnote_label = { "[^" ~ ASCII_DIGIT+ ~ "]" }
+
 // quote
 quote_txt  = _{ inline_symbol | text | INLINE_SYMBOLS }
 quote_line =  { quote_txt+ ~ vertical_space? ~ &(NEWLINE | EOI) }
@@ -96,8 +110,8 @@ rich_txt       =  { rich_txt_maybe }
 rich_txt_maybe = _{ (inline_symbol | text)* }
 rich_txt_some  = _{ (inline_symbol | text)+ }
 
-inline_symbol = _{ bold | italic | inline_code | link | reflink | refurl | image | strike }
-block_type    = _{ admonition | h1 | h2 | h3 | h4 | h5 | h6 | quote | codeblock | comment | list }
+inline_symbol = _{ bold | italic | inline_code | link | reflink | refurl | image | strike | footnote_ref  }
+block_type    = _{ admonition | h1 | h2 | h3 | h4 | h5 | h6 | quote | codeblock | comment | list | numbered_list | footnote_def }
 
 text_line = _{ block_type | horiz_sep | &NEWLINE | paragraph }
 
