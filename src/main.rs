@@ -29,20 +29,19 @@ fn main() {
     let args = Args::parse();
 
     match args.command {
-        Commands::Build { input, output } => {}
+        Commands::Build { input, output } => build(input, output),
         Commands::Run { input, output } => {}
     }
-
-    let unparsed_file = std::fs::read_to_string("tests/test.lessink").unwrap();
-
-    let ast = parser::parse(&unparsed_file).unwrap();
-    let html = renderer::HtmlRenderer::new();
-
-    println!("{}", html.render(ast));
 }
 
 // We walk the input file system and file by file we create the new html file in the output location.
-fn build() {}
+fn build(input: std::path::PathBuf, output: std::path::PathBuf) {
+    let unparsed_file = std::fs::read_to_string(input).unwrap();
+
+    let ast = parser::parse(&unparsed_file).unwrap();
+    let html = renderer::Html::render(ast);
+    print!("{}", html);
+}
 
 // This is build followed by a rustembed into a webserver so the user can see what we created.
 fn run() {}
